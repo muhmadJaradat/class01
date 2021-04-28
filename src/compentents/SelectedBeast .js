@@ -8,11 +8,14 @@ class SelectedBeast extends React.Component  {
     
 render() {
    
-
+console.log(this.props.selectedData);
 
     return (
-        <div style={{position:'relative'}}>
-      <Modal.Dialog style={ {position:'absolute',top:'0',bottom:'0',left:'0',right:'0',margin:'auto'} }  >
+        <div >
+      <Modal   size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      show={this.props.isOpen} onHide={this.props.closeModal} >
           
   <Modal.Header closeButton >
     <Modal.Title>{this.props.selectedData.nextSibling.textContent}</Modal.Title>
@@ -20,14 +23,14 @@ render() {
 
   <Modal.Body>
     <Card.Img src={this.props.selectedData.src}/>
-    <Card.Text>{this.props.selectedData.nextSibling.nextSibling.textContent}</Card.Text>
+    <Card.Text style={{textAlign:'center'}}>{this.props.selectedData.nextSibling.nextSibling.textContent}</Card.Text>
   </Modal.Body>
 
   <Modal.Footer>
     <Button onClick={this.props.closeModal}>Close</Button>
 
   </Modal.Footer>
-</Modal.Dialog>
+</Modal>
       </div>
     )
     
