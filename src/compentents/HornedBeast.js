@@ -1,8 +1,6 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
-import ListGroupItem from 'react-bootstrap/ListGroupItem';
-import ListGroup from 'react-bootstrap/ListGroup';
+
 
 class HornedBeast extends React.Component {
     constructor(props){
@@ -11,17 +9,20 @@ class HornedBeast extends React.Component {
         numOfClicks:0
         }
     }
-    handler= () =>{
+    handler= (e) =>{
+        this.props.openModal(e);
         this.setState({
             numOfClicks:this.state.numOfClicks+1,
         })
     }
     render() {
+        // console.log(<HornedBeast/>._self.props.name);
         return(
         <div>
-            <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={this.props.url} alt='' onClick={this.handler} />
-  <Card.Body>
+            <Card style={{ width: '18rem' , height:'400px' ,     margin: '20px'}}>
+  
+ 
+  <Card.Img variant="top" src={this.props.url} alt='' onClick={this.handler} style={{height:'200px'}}  />
     <Card.Title>{this.props.name}</Card.Title>
     <Card.Text>
     {this.props.description}
@@ -30,7 +31,7 @@ class HornedBeast extends React.Component {
     💖 {this.state.numOfClicks}
     </Card.Text>
   
-  </Card.Body>
+
 </Card>
 
  
