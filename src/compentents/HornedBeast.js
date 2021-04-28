@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap'
 
 
 class HornedBeast extends React.Component {
@@ -16,10 +17,13 @@ class HornedBeast extends React.Component {
         })
     }
     render() {
-        // console.log(<HornedBeast/>._self.props.name);
+        console.log(this.props);
         return(
         <div>
-            <Card style={{ width: '18rem' , height:'400px' ,     margin: '20px'}}>
+            
+            <Card style={{ width: '18rem' , height:'400px' ,     margin: '20px'}} bg={'dark' } className="mb-2"
+                text={'white'}
+                >
   
  
   <Card.Img variant="top" src={this.props.url} alt='' onClick={this.handler} style={{height:'200px'}}  />
